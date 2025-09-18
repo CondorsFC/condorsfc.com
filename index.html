@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CONDORS FC | Kelowna, BC</title>
+  <title>Condors FC | Kelowna</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Oswald:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -36,15 +35,30 @@
       padding: 2rem 1rem;
     }
 
-    header h1 {
+    .header-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .header-content img {
+      max-width: 100px;
+      height: auto;
+    }
+
+    .header-content h1 {
       font-family: 'Russo One', sans-serif;
       font-size: 3rem;
       letter-spacing: 2px;
+      color: var(--gold);
     }
 
     header p {
       font-size: 1.2rem;
       color: var(--beige);
+      margin-top: 1rem;
     }
 
     nav {
@@ -53,6 +67,7 @@
       justify-content: center;
       gap: 1.5rem;
       padding: 0.75rem;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -109,8 +124,11 @@
 </head>
 <body>
   <header>
-    <img src="White Logo PNG.png" alt="Condors FC Logo" style="max-width: 140px; margin-bottom: 1rem;">
-    <h1>CONDORS FC</h1>
+    <div class="header-content">
+      <img src="White Logo PNG.png" alt="Condors FC Logo Left">
+      <h1>Condors FC</h1>
+      <img src="White Logo PNG.png" alt="Condors FC Logo Right">
+    </div>
     <p>Community. Culture. Competition.</p>
   </header>
 
@@ -118,13 +136,13 @@
     <a href="#about">About</a>
     <a href="#roles">Team</a>
     <a href="#marketing">Media</a>
-    <a href="#sponsors">Sponsors</a>
+    <a href="#sponsors">Sponsorship</a>
     <a href="#merch">Merch</a>
     <a href="#contact">Contact</a>
   </nav>
 
   <section id="about">
-    <h2>About CONDORS FC</h2>
+    <h2>About Condors FC</h2>
     <p>Founded in August 2023, Condors FC is a competitive men's soccer club in Kelowna, BC. Built on community, culture, and consistency, we compete in the KMSL and OPL leagues with a long-term vision of becoming one of BC’s top adult soccer programs.</p>
     <p>We’ve earned podium finishes across multiple leagues and are now focused on growing our men's program through disciplined training, strategic media growth, and financial sustainability.</p>
   </section>
