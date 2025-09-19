@@ -95,19 +95,21 @@
       text-align: center;
     }
 .team-grid {
-display: flex;
-flex-wrap: wrap;
-justify-content: space-around;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 gap: 2rem;
-text-align: center;
+justify-items: center;
 }
 
 .team-member {
+text-align: center;
 max-width: 180px;
 }
 
 .team-member img {
-width: 100%;
+width: 160px;
+height: 160px;
+object-fit: cover;
 border-radius: 50%;
 border: 3px solid var(--black);
 margin-bottom: 1rem;
