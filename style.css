@@ -1,18 +1,15 @@
 
 .contact-icons {
-  display: flex;
+ display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
-  margin-top: 20px;
-  font-size: 2rem;
+  gap: 20px;
+  padding: 40px 0;
 }
 
-.contact-icons a {
-  color: black;
-  transition: color 0.3s;
+.contact-icons a svg {
+  transition: transform 0.2s ease;
 }
 
-.contact-icons a:hover {
-  color: #A68358;
+.contact-icons a:hover svg {
+  transform: scale(1.1);
 }
