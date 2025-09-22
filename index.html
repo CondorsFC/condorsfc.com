@@ -282,7 +282,7 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     <h2>Condors Hoodie</h2>
     <div class="modal-gallery">
       <img src="hoodie_frontal.jpg" alt="Hoodie Front">
-      <img src="hoodie_frontal2.jpg" alt="Hoodie Front 2"">
+      <img src="hoodie_frontal2.jpg" alt="Hoodie Front 2">
       <p>Official Team hoodies are a comfortable cotton blend. Sizes S, M, L. DM us on Instagram to place an order today.</p>
       <p><strong>$50.00</strong></p>
     </div>
@@ -329,7 +329,12 @@ potential Women’s teams on hold for the time being. What started as a bold ide
   <footer>
     <p>&copy; 2025 Condors FC. All rights reserved.</p>
   </footer>
-
+<!-- Lightbox overlay -->
+<div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 1000;">
+  <img id="lightbox-img" src="" alt="Fullscreen Image" style="max-height: 90vh; max-width: 90vw; object-fit: contain;">
+  <button id="prev-btn" class="nav-btn">&#10094;</button>
+  <button id="next-btn" class="nav-btn">&#10095;</button>
+</div>
   <script>
   function showModal(id) {
     document.getElementById(id).style.display = "block";
@@ -415,11 +420,6 @@ function updateLightbox() {
     });
   });
 </script>
-<!-- Lightbox overlay -->
-<div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 1000;">
-  <img id="lightbox-img" src="" alt="Fullscreen Image" style="max-height: 90vh; max-width: 90vw; object-fit: contain;">
-  <button id="prev-btn" class="nav-btn">&#10094;</button>
-  <button id="next-btn" class="nav-btn">&#10095;</button>
-</div>
+
 </body>
 </html>
