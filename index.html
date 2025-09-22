@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -347,7 +347,8 @@ potential Women’s teams on hold for the time being. What started as a bold ide
 
     modalImages.forEach((img) => {
       img.style.cursor = "zoom-in";
-      img.addEventListener("click", function () {
+      img.addEventListener("click", function (e) {
+        e.stopPropagation(); // Prevent modal click from triggering close
         lightboxImg.src = img.src;
         lightbox.style.display = "flex";
       });
@@ -357,14 +358,16 @@ potential Women’s teams on hold for the time being. What started as a bold ide
   function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
+   if (e.target.id === "lightbox") {
     lightbox.style.display = "none";
     lightboxImg.src = "";
   }
-</script>
+ }
 
-  <!-- Lightbox overlay -->
-<div id="lightbox" style="display: none;" onclick="closeLightbox()">
-  <img id="lightbox-img" src="" alt="Fullscreen Image">
+  </script>
+<!-- Lightbox overlay -->
+<div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 1000;" onclick="closeLightbox(event)">
+<img id="lightbox-img" src="" alt="Fullscreen Image" style="max-height: 90vh; max-width: 90vw; object-fit: contain;">
 </div>
 
 </div>
