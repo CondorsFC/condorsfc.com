@@ -365,16 +365,23 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     });
   });
 
-  function closeLightbox(e) {
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
-   if (e.target.id === "lightbox") {
-    lightbox.style.display = "none";
-    lightboxImg.src = "";
-  }
- }
+  // Close when clicking the lightbox background
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox || e.target === lightboxImg) {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+      }
+    });
 
-  </script>
+    // Also allow ESC key to close lightbox
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && lightbox.style.display === "flex") {
+        lightbox.style.display = "none";
+        lightboxImg.src = "";
+      }
+    });
+  });
+</script>
 <!-- Lightbox overlay -->
 <div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 1000;" onclick="closeLightbox(event)">
 <img id="lightbox-img" src="" alt="Fullscreen Image" style="max-height: 90vh; max-width: 90vw; object-fit: contain;">
