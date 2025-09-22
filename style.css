@@ -170,3 +170,22 @@
   height: 100%;
   border: 0;
 }
+
+section {
+  padding: 3rem 1rem;
+}
+
+section:nth-of-type(odd) {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--beige);
+  color: var(--black);
+}
+.section-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
