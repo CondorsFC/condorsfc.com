@@ -272,9 +272,9 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     <span class="close" onclick="closeModal('merch1')">&times;</span>
     <h2>Condors Hoodie</h2>
     <div class="modal-gallery">
-      <img src="hoodie_frontal.jpg" onclick="openFullscreen(this)">
-      <img src="hoodie_frontal2.jpg" onclick="openFullscreen(this)">
-      <p>Official Team hoodies are a comfortable cotton blend, available in S, M, and L. DM us on Instagram to place an order today.</p>
+      <img src="hoodie_frontal.jpg" alt="Hoodie Front">
+      <img src="hoodie_frontal2.jpg" alt="Hoodie Front 2"">
+      <p>Official Team hoodies are a comfortable cotton blend. Sizes S, M, L. DM us on Instagram to place an order today.</p>
       <p><strong>$50.00</strong></p>
     </div>
   </div>
@@ -286,9 +286,9 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     <span class="close" onclick="closeModal('merch2')">&times;</span>
     <h2>Condors T-Shirt</h2>
     <div class="modal-gallery">
-      <img src="tshirt_frontal.jpg" onclick="openFullscreen(this)">
-      <img src="tshirt_back.jpg" onclick="openFullscreen(this)">
-       <p>Our t-shirts are a thick cotton with durable print on the back, available in S, M, and L. DM us on Instagram to place an order today.</p>
+      <img src="tshirt_frontal.jpg" alt="T-Shirt Front">
+      <img src="tshirt_back.jpg" alt="T-Shirt Back">
+       <p>Thick cotton with durable print on the back. Sizes S, M, L. DM us on Instagram to place an order today.</p>
       <p><strong>$35.00</strong></p>
     </div>
   </div>
@@ -338,22 +338,35 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     });
   };
 </script>
-  <script>
-  function openFullscreen(img) {
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Attach click listener to all modal images
+    const modalImages = document.querySelectorAll(".modal-gallery img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
-    lightboxImg.src = img.src;
-    lightbox.style.display = "flex";
-  }
+
+    modalImages.forEach((img) => {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", function () {
+        lightboxImg.src = img.src;
+        lightbox.style.display = "flex";
+      });
+    });
+  });
 
   function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
     lightbox.style.display = "none";
-    document.getElementById("lightbox-img").src = "";
+    lightboxImg.src = "";
   }
 </script>
-<div id="lightbox" style="display:none;" onclick="closeLightbox()">
-  <img id="lightbox-img" src="">
+
+  <!-- Lightbox overlay -->
+<div id="lightbox" style="display: none;" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Fullscreen Image">
+</div>
+
 </div>
 </body>
 </html>
