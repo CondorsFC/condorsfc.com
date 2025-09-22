@@ -272,8 +272,8 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     <span class="close" onclick="closeModal('merch1')">&times;</span>
     <h2>Condors Hoodie</h2>
     <div class="modal-gallery">
-      <img src="hoodie_frontal.jpg">
-      <img src="hoodie_frontal2.jpg">
+      <img src="hoodie_frontal.jpg" onclick="openFullscreen(this)">
+      <img src="hoodie_frontal2.jpg" onclick="openFullscreen(this)">
       <p>Official Team hoodies are a comfortable cotton blend, available in S, M, and L. DM us on Instagram to place an order today.</p>
       <p><strong>$50.00</strong></p>
     </div>
@@ -286,9 +286,9 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     <span class="close" onclick="closeModal('merch2')">&times;</span>
     <h2>Condors T-Shirt</h2>
     <div class="modal-gallery">
-      <img src="tshirt_frontal.jpg">
-      <img src="tshirt_back.jpg"">
-       <p>Our lifestyle t-shirts are a thick cotton with durable image print on the back, available in S, M, and L. DM us on Instagram to place an order today.</p>
+      <img src="tshirt_frontal.jpg" onclick="openFullscreen(this)">
+      <img src="tshirt_back.jpg" onclick="openFullscreen(this)">
+       <p>Our t-shirts are a thick cotton with durable print on the back, available in S, M, and L. DM us on Instagram to place an order today.</p>
       <p><strong>$35.00</strong></p>
     </div>
   </div>
@@ -338,5 +338,17 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     });
   };
 </script>
+  <script>
+  function openFullscreen(img) {
+    if (img.requestFullscreen) {
+      img.requestFullscreen();
+    } else if (img.webkitRequestFullscreen) { /* Safari */
+      img.webkitRequestFullscreen();
+    } else if (img.msRequestFullscreen) { /* IE11 */
+      img.msRequestFullscreen();
+    }
+  }
+</script>
+
 </body>
 </html>
