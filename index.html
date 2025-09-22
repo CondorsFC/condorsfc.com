@@ -354,37 +354,72 @@ potential Women’s teams on hold for the time being. What started as a bold ide
     const modalImages = document.querySelectorAll(".modal-gallery img");
     const lightbox = document.getElementById("lightbox");
     const lightboxImg = document.getElementById("lightbox-img");
+    const nextBtn = document.getElementById("next-btn");
+    const prevBtn = document.getElementById("prev-btn");
 
-    modalImages.forEach((img) => {
+    let currentIndex = -1;
+    let currentGallery = [];
+
+   modalImages.forEach((img, index) => {
       img.style.cursor = "zoom-in";
       img.addEventListener("click", function (e) {
-        e.stopPropagation(); // Prevent modal click from triggering close
-        lightboxImg.src = img.src;
+        e.stopPropagation();
+        currentGallery = Array.from(img.parentElement.querySelectorAll("img"));
+        currentIndex = currentGallery.indexOf(img);
+        updateLightbox();
         lightbox.style.display = "flex";
       });
     });
-  });
+function updateLightbox() {
+      if (currentIndex >= 0 && currentIndex < currentGallery.length) {
+        lightboxImg.src = currentGallery[currentIndex].src;
+      }
+    }
 
+    nextBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (currentIndex < currentGallery.length - 1) {
+        currentIndex++;
+        updateLightbox();
+      }
+    });
+
+    prevBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateLightbox();
+      }
+    });
   // Close when clicking the lightbox background
     lightbox.addEventListener("click", function (e) {
       if (e.target === lightbox || e.target === lightboxImg) {
         lightbox.style.display = "none";
-        lightboxImg.src = "";
+       lightboxImg.src = "";
+        currentIndex = -1;
       }
     });
 
     // Also allow ESC key to close lightbox
-    document.addEventListener("keydown", function (e) {
-      if (e.key === "Escape" && lightbox.style.display === "flex") {
-        lightbox.style.display = "none";
-        lightboxImg.src = "";
+     document.addEventListener("keydown", function (e) {
+      if (lightbox.style.display === "flex") {
+        if (e.key === "ArrowRight") {
+          nextBtn.click();
+        } else if (e.key === "ArrowLeft") {
+          prevBtn.click();
+        } else if (e.key === "Escape") {
+          lightbox.style.display = "none";
+          lightboxImg.src = "";
+          currentIndex = -1;
       }
     });
   });
 </script>
 <!-- Lightbox overlay -->
-<div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 1000;" onclick="closeLightbox(event)">
-<img id="lightbox-img" src="" alt="Fullscreen Image" style="max-height: 90vh; max-width: 90vw; object-fit: contain;">
+<div id="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); justify-content: center; align-items: center; z-index: 1000;">
+  <img id="lightbox-img" src="" alt="Fullscreen Image" style="max-height: 90vh; max-width: 90vw; object-fit: contain;">
+  <button id="prev-btn" class="nav-btn">&#10094;</button>
+  <button id="next-btn" class="nav-btn">&#10095;</button>
 </div>
 
 </div>
