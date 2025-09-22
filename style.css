@@ -72,17 +72,19 @@
 }
 
 .merch-item img {
-  width: 200px;
-  height: 250px;
+  width: 180px;
+  height: 240px;
   object-fit: cover;
   border-radius: 10px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
   cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-.merch-item img:hover {
-  transform: scale(1.05);
+.merch-item:hover img {
+  transform: scale(1.08);
 }
+
 
 .modal-gallery {
   display: flex;
