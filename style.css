@@ -127,3 +127,28 @@
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   border-radius: 10px;
 }
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1001;
+  transition: background-color 0.3s ease;
+}
+
+#prev-btn {
+  left: 20px;
+}
+
+#next-btn {
+  right: 20px;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
