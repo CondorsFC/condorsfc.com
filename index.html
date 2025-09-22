@@ -340,15 +340,20 @@ potential Women’s teams on hold for the time being. What started as a bold ide
 </script>
   <script>
   function openFullscreen(img) {
-    if (img.requestFullscreen) {
-      img.requestFullscreen();
-    } else if (img.webkitRequestFullscreen) { /* Safari */
-      img.webkitRequestFullscreen();
-    } else if (img.msRequestFullscreen) { /* IE11 */
-      img.msRequestFullscreen();
-    }
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    lightboxImg.src = img.src;
+    lightbox.style.display = "flex";
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = "none";
+    document.getElementById("lightbox-img").src = "";
   }
 </script>
-
+<div id="lightbox" style="display:none;" onclick="closeLightbox()">
+  <img id="lightbox-img" src="">
+</div>
 </body>
 </html>
